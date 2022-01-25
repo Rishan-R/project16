@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <style media="screen">
+      .con {
+        background-color: white;
+        margin: 10pt;
+        border-radius: 10pt;
+        padding: 10pt;
+      }
+
+      body {
+        background-color: #8CD8FF;
+        font-family: Arial;
+        font-size: 150%;
+      }
+
+      input {
+        padding: 5px;
+        border-radius: 5px;
+        border: 0.5px solid black;
+        margin-left: 5pt;
+      }
+
+      p {
+        display: inline-block;
+      }
+
+      #c {
+        padding: 5pt;
+        background-color: white;
+        border: 1pt solid black;
+        border-radius: 5pt;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="con">
+      <p>Principal Amount: </p><input type="number" id="pa" placeholder="Enter number"><br>
+      <p>Rate: </p><input type="number" id="r" placeholder="Enter number"><br>
+      <p>Time: </p><input type="number" id="t" placeholder="Enter number"><br>
+      <button id="c">Calculate</button><br>
+      <p style="font-size: 115%;" id="res"></p>
+    </div>
+  </body>
+  <script>
+    let pa = document.getElementById("pa");
+    let r = document.getElementById("r");
+    let t = document.getElementById("t");
+    let c = document.getElementById("c");
+    let res = document.getElementById("res");
+
+    c.onclick = function() {
+      if ((pa.value != "" && pa.value > 0) && (r.value != "" && r.value > 0) && (t.value != "" && t.value > 0)) {
+        res.innerText = pa.value * r.value * t.value;
+      } else {
+        res.innerText = "One or more of your inputs are invalid.";
+      }
+    }
+  </script>
+</html>
